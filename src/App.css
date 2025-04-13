@@ -1,0 +1,319 @@
+/* ============================================
+   GENEL VE TEMEL STİLLER
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================
+   ARKA PLAN VE ANİMASYONLAR
+   ============================================ */
+body {
+  min-height: 100vh;
+  background: linear-gradient(45deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+  margin: 0;
+  display: flex;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4CAF50, #2196F3);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ============================================
+   UYGULAMA KONTEYNERİ VE ROOT STİLLERİ
+   ============================================ */
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ============================================
+   LOGO VE ANİMASYONLAR
+   ============================================ */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ============================================
+   KART BİLEŞENİ STİLLERİ
+   ============================================ */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.card h2 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+/* ============================================
+   BAŞLIK VE METİN STİLLERİ
+   ============================================ */
+.app-title {
+  margin: 10px 0;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #ffffff, #e0e0e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes titleGlow {
+  from {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* ============================================
+   QUIZ BİLEŞENİ STİLLERİ
+   ============================================ */
+.quiz-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.question-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  height: 100%;
+}
+
+.question-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 8px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+}
+
+.question-text {
+  font-size: 1.2em;
+  color: #333;
+  margin: 0;
+}
+
+.options-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* ============================================
+   CEVAP BUTONU STİLLERİ
+   ============================================ */
+.option-button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background-color: #f0f0f0;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+}
+
+.option-button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.option-button.correct {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.option-button.wrong {
+  background-color: #f44336;
+  color: white;
+}
+
+/* ============================================
+   ZAMANLAYICI STİLLERİ
+   ============================================ */
+.timer {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  min-width: 200px;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+}
+
+/* 20-30 saniye arası - Yeşil */
+.timer.normal {
+  background-color: #4CAF50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+/* 10-20 saniye arası - Sarı */
+.timer.warning {
+  background-color: #FFC107;
+  box-shadow: 0 0 15px rgba(255, 193, 7, 0.7);
+}
+
+/* 0-10 saniye arası - Kırmızı */
+.timer.danger {
+  background-color: #f44336;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.8);
+  animation: breathe 1s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(244, 67, 54, 1);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px rgba(244, 67, 54, 0.8);
+  }
+}
+
+/* ============================================
+   RESPONSIVE TASARIM
+   ============================================ */
+@media (max-width: 600px) {
+  .quiz-container {
+    padding: 15px;
+    max-width: 90%;
+    height: 550px;
+  }
+  
+  .question-text {
+    font-size: 1.1em;
+  }
+  
+  .option-button {
+    padding: 10px;
+    min-height: 55px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2.5rem;
+    top: 10px;
+  }
+}
