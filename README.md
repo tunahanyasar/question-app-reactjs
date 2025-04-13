@@ -13,12 +13,12 @@ Zaman sınırlı, interaktif bir quiz uygulamasıdır. React ve Vite kullanılar
 
 1. Projeyi klonlayın
 ```bash
-git clone 
+git clone https://github.com/tunahanyasar/Hafta-11-Question-App.git
 ```
 
 2. Proje klasörüne gidin
 ```bash
-cd question-app
+cd Hafta-11-Question App
 ```
 
 3. Bağımlılıkları yükleyin
