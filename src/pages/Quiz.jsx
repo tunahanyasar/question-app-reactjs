@@ -104,7 +104,7 @@ const Quiz = ({ setScore }) => {
           Soru {currentQuestion + 1}/{questions.length}
         </div>
         <img
-          src={`/src/assets/pictures/${questions[currentQuestion].media}`}
+          src={`./public/pictures/${questions[currentQuestion].media}`}
           alt="Question"
           className="question-image"
         />
