@@ -116,3 +116,43 @@
   opacity: 0.7;
 }
 
+/* ============================================
+   ATLAMA BUTONU STİLLERİ
+   ============================================ */
+.skip-button {
+  grid-column: span 2;
+  background-color: #fff3cd;
+  border: 2px solid #ffeeba;
+  padding: 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #856404;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.skip-button:hover {
+  background-color: #ffeeba;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.skip-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.skip-button .material-symbols-outlined {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-left: auto;
+}
+

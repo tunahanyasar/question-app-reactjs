@@ -19,6 +19,7 @@ const Quiz = ({ setScore }) => {
   const [timer, setTimer] = useState(30)
   const [selectedAnswer, setSelectedAnswer] = useState(null)
   const [correctAnswer, setCorrectAnswer] = useState(null)
+  const [answerHistory, setAnswerHistory] = useState([])
 
   // ============================================
   // ZAMANLAYICI VE CEVAP ŞIKLARININ YÖNETİMİ
@@ -55,10 +56,52 @@ const Quiz = ({ setScore }) => {
       wrong: !isCorrect ? prev.wrong + 1 : prev.wrong
     }))
     
+    const updatedAnswerHistory = [...answerHistory, {
+      questionNumber: currentQuestion + 1,
+      question: questions[currentQuestion].question,
+      selectedAnswer: answer,
+      correctAnswer: questions[currentQuestion].answer,
+      isCorrect: isCorrect
+    }]
+    setAnswerHistory(updatedAnswerHistory)
+    
     if (currentQuestion === questions.length - 1) {
-      navigate('/result', { replace: true })
+      setTimeout(() => {
+        navigate('/result', { 
+          replace: true,
+          state: { answerHistory: updatedAnswerHistory }
+        })
+      }, 1000)
     } else {
       setTimeout(handleNextQuestion, 1000)
+    }
+  }
+
+  // ============================================
+  // SORUYU ATLAMA İŞLEMİ
+  // ============================================
+  const handleSkipQuestion = () => {
+    const updatedAnswerHistory = [...answerHistory, {
+      questionNumber: currentQuestion + 1,
+      question: questions[currentQuestion].question,
+      selectedAnswer: null,
+      correctAnswer: questions[currentQuestion].answer,
+      isCorrect: false,
+      isSkipped: true
+    }]
+    setAnswerHistory(updatedAnswerHistory)
+    
+    if (currentQuestion === questions.length - 1) {
+      navigate('/result', { 
+        replace: true,
+        state: { answerHistory: updatedAnswerHistory }
+      })
+    } else {
+      setCurrentQuestion(prev => prev + 1)
+      setShowOptions(false)
+      setTimer(30)
+      setSelectedAnswer(null)
+      setCorrectAnswer(null)
     }
   }
 
@@ -73,9 +116,12 @@ const Quiz = ({ setScore }) => {
       setSelectedAnswer(null)
       setCorrectAnswer(null)
     } else {
-      navigate('/result', { replace: true })
+      navigate('/result', { 
+        replace: true,
+        state: { answerHistory }
+      })
     }
-  }, [currentQuestion, navigate])
+  }, [currentQuestion, navigate, answerHistory])
 
   // ============================================
   // CEVAP BUTONLARININ STİL SINIFLARININ BELİRLENMESİ
@@ -121,6 +167,13 @@ const Quiz = ({ setScore }) => {
                 {option}
               </button>
             ))}
+            <button
+              className="skip-button"
+              onClick={handleSkipQuestion}
+              disabled={selectedAnswer !== null}
+            >
+              Soruyu Atla <span className="material-symbols-outlined">keyboard_double_arrow_right</span>
+            </button>
           </div>
         )}
       </div>

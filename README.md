@@ -81,8 +81,9 @@ npm run dev
     * **questions.js**: Quiz sorularının veritabanı
 
 5. ***src/assets/***: Statik dosyalar
-    * **pictures/**: Quiz sorularında kullanılan resimler
     * **screenshots/**: Proje ekran görüntüleri
+
+6. ***public/pictures***: Quiz sorularında kullanılan resimler
 
 ---
 
@@ -95,21 +96,42 @@ npm run dev
    - Puanlama sistemi
    - Soru geçiş animasyonları
    - Sonuç sayfası
+   - Soru atlama özelliği
+   - Material Icons entegrasyonu
+   - Detaylı sonuç sayfası
+     - Doğru, yanlış, boş ve atlanan soru sayıları
+     - Her soru için detaylı geri bildirim
+     - Modern ve kullanıcı dostu arayüz
    
-
 2. **Modern UI/UX**
-   - Temiz ve modern arayüz
    - Responsive tasarım
+   - Kullanıcı dostu arayüz
+   - Görsel geri bildirimler
+   - Temiz ve düzenli kod yapısı
    - Animasyonlu geçişler
    - Zamanlayıcı animasyonları
    - Cevap butonu efektleri
+---
 
-3. **İnteraktif Özellikler**
-   - Cevap seçimi
-   - Zamanlayıcı
-   - Puan takibi
-   - Sonuç gösterimi
-   - Durum bildirimleri
+## 🔄 Son Güncellemeler
+
+1. **Soru Atlama Özelliği**
+   - "Soruyu Atla >>" butonu eklendi
+   - Material Icons entegrasyonu yapıldı
+   - Buton tasarımı ve konumu optimize edildi
+
+2. **Sonuç Sayfası İyileştirmeleri**
+   - Detaylı sonuç gösterimi eklendi
+   - Doğru, yanlış, boş ve atlanan soru sayıları eklendi
+   - Her soru için detaylı geri bildirim eklendi
+   - Görsel iyileştirmeler yapıldı
+   - Sayfa düzeni optimize edildi
+
+3. **Genel İyileştirmeler**
+   - Logo favicon olarak ayarlandı
+   - Sayfa kenar boşlukları düzenlendi
+   - Görsel tutarlılık sağlandı
+   - Kod yapısı temizlendi ve optimize edildi
 
 ## 💡 Kullanılan Yapılar | Kazanımlar
 
@@ -152,7 +174,7 @@ npm run dev
 ![Red](src/assets/screenshots/red.png)
 
 ### Sonuç Sayfası
-![Sonuç](src/assets/screenshots/reslut.png)
+![Sonuç](src/assets/screenshots/result.png)
 
 ---
 
