@@ -12,10 +12,10 @@ export const questions = [
     media: "pamuk.jpg",
   },
   {
-    question: "Tarkan'ın 'Kuzu Kuzu' şarkısı hangi yılda çıkmıştır?",
-    options: ["1998", "2000", "2002", "2004"],
-    answer: "2002",
-    media: "tarkan.jpg",
+    question: "Dünya üzerindeki en uzun nehir hangisidir?",
+    options: ["Amazon Nehri", "Mississippi Nehri", "Nil Nehri", "Yangtze Nehri"],
+    answer: "Nil Nehri",
+    media: "nehir.jpg",
   },
   {
     question: "Agorafobi nedir?",
