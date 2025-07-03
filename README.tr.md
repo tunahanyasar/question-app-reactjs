@@ -2,7 +2,7 @@
 
 [🇬🇧 İngilizce README için tıklayın](./README.md)
 
-*Created on : April 17, 2025*
+*Created on : April 13, 2025*
 
 Zaman sınırlı, interaktif bir quiz uygulamasıdır. React ve Vite kullanılarak geliştirilmiştir.
 * Bu proje, Patika Frontend Bootcamp'i için oluşturulan **Hafta-11 / React - Question App | 2. Final** projesidir.
